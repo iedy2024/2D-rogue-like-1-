@@ -1,0 +1,50 @@
+Revise everything u have done
+Fix teleportin to center enemies(collision problem)
+Add damage to the enemies
+Cutting sprites for an animation(https://www.youtube.com/watch?v=XL_emNXBRws)
+Make a healh bar
+(In order to make a slanted health bar i have to create it myself/Move the bar of the screen)
+(Using func from other scenes with $ can be done only if it is a chlid)
+
+Give enemies projectiles
+
+Make the idle behaiviour of enemies
+
+Make the attack(tossing poision) mechanich
+
+Improve map(4 lvls + art)
+Coins
+Create breakable objects that have a chance to drop coins
+
+Make a death screen and mechanic
+
+Make a timer
+Make traps
+Make chests
+
+Make the shadows mechanic
+
+Create hidden rooms
+
+Learn sound design
+
+Make a menu
+
+Set up a story
+
+Make animations and implement them
+
+Make a bossfight(Final lvl)
+
+Make buffs and passives
+
+Learn how to early acces a game(on epic + steam)
+	  to publish a game
+	  to make achivemts
+	  to make trading cards
+          whom to give credits to and copyright related issues
+
+Play around with unused godot mechanics
+	
+
+https://www.youtube.com/watch?v=1_OFJLyqlXI

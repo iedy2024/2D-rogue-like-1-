@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cioidaur8y1t1"]
+
+[ext_resource type="Texture2D" uid="uid://cjgpjaf0cf5re" path="res://Assets/Sprite-0005.png" id="1_7fmq4"]
+[ext_resource type="Script" path="res://Scripts/bone_hound.gd" id="1_x8cha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ojgf"]
+radius = 137.015
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2syy8"]
+size = Vector2(26, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23g75"]
+radius = 24.0208
+
+[node name="Bone Hound" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+script = ExtResource("1_x8cha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7fmq4")
+
+[node name="Detaction Area" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detaction Area"]
+shape = SubResource("CircleShape2D_6ojgf")
+
+[node name="Hound collision" type="CollisionShape2D" parent="."]
+position = Vector2(2, 4)
+shape = SubResource("RectangleShape2D_2syy8")
+
+[node name="Bone Hound attack hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone Hound attack hitbox"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_23g75")
+
+[connection signal="body_entered" from="Detaction Area" to="." method="_on_detaction_area_body_entered"]
+[connection signal="body_exited" from="Detaction Area" to="." method="_on_detaction_area_body_exited"]

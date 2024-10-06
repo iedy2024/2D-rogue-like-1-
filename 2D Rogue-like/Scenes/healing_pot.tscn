@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1q5l851i8qf"]
+
+[ext_resource type="Texture2D" uid="uid://cmerovtdn78lv" path="res://Assets/Healing Pot.png" id="1_58y73"]
+[ext_resource type="Script" path="res://Scripts/healing_pot.gd" id="1_lvob3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeu61"]
+radius = 5.09902
+
+[node name="Healing Pot" type="Area2D"]
+script = ExtResource("1_lvob3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_yeu61")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_58y73")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

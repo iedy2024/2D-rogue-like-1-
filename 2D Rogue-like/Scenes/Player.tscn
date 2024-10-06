@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://l71unhnsgfu2"]
+
+[ext_resource type="Texture2D" uid="uid://b7nsr8apyd7v8" path="res://Assets/Sprite-0002.png" id="1_tar5h"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xjr15"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_507tn"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srobi"]
+radius = 22.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_xjr15")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2)
+texture = ExtResource("1_tar5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_507tn")
+
+[node name="Player attack hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player attack hitbox"]
+shape = SubResource("CircleShape2D_srobi")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Player attack hitbox" to="." method="_on_player_attack_hitbox_body_entered"]
+[connection signal="body_exited" from="Player attack hitbox" to="." method="_on_player_attack_hitbox_body_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
